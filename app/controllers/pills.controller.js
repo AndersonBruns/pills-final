@@ -2,7 +2,6 @@ const db = require("../models");
 const Pills = db.pills;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Tutorial
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.data) {
@@ -12,7 +11,6 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Tutorial
   const pills = {
     data: req.body.data,
     hora: req.body.hora,
@@ -20,7 +18,6 @@ exports.create = (req, res) => {
     status:  req.body.status
 }
 
-  // Save Tutorial in the database
   Pills.create(pills)
     .then(data => {
       res.send(data);
@@ -33,7 +30,6 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
   
   Pills.findAll()
@@ -49,7 +45,6 @@ exports.findAll = (req, res) => {
 };
 
 
-// Update a Tutorial by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
 
@@ -59,22 +54,21 @@ exports.update = (req, res) => {
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was updated successfully."
+          message: "Agenda was updated successfully."
         });
       } else {
         res.send({
-          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+          message: `Cannot update Agenda with id=${id}. Maybe Agenda was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Tutorial with id=" + id
+        message: "Error updating Agenda with id=" + id
       });
     });
 };
 
-// Delete a Tutorial with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
@@ -84,17 +78,17 @@ exports.delete = (req, res) => {
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was deleted successfully!"
+          message: "Agenda was deleted successfully!"
         });
       } else {
         res.send({
-          message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+          message: `Cannot delete Agenda with id=${id}. Maybe Agenda was not found!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete Tutorial with id=" + id
+        message: "Could not delete Agennda with id=" + id
       });
     });
 };
