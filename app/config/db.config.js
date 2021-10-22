@@ -1,8 +1,8 @@
 module.exports = {
   HOST: "us-cdbr-east-04.cleardb.com",
-  USER: "b6499fe3dd63a6",
-  PASSWORD: "e2843d03",
-  DB: "heroku_04a381fdd3ebe66",
+  USER: "b6e5897e356418",
+  PASSWORD: "f1b883f9",
+  DB: "heroku_da50ecf521608a2",
   dialect: "mysql",
   pool: {
     max: 5,
