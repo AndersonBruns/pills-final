@@ -6,6 +6,8 @@ module.exports = app => {
   router.post("/create", pills.create);
 
   router.get("/all", pills.findAll);
+
+  router.get("/esp", pills.returnEsp)
   
   router.put("/alter/:id", pills.update);
 
