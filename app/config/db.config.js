@@ -1,4 +1,4 @@
-/*module.exports = {
+module.exports = {
   HOST: "us-cdbr-east-04.cleardb.com",
   USER: "b6e5897e356418",
   PASSWORD: "f1b883f9",
@@ -10,9 +10,9 @@
     acquire: 30000,
     idle: 10000
   }
-};*/
+};
 
-module.exports = {
+/*module.exports = {
   HOST: "localhost",
   USER: "root",
   PASSWORD: "root",
@@ -24,4 +24,4 @@ module.exports = {
     acquire: 30000,
     idle: 10000
   }
-};
+};*/
