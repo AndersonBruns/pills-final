@@ -59,7 +59,7 @@ exports.returnEsp = (req, res) => {
       dataAtual.setSeconds(0)
       dataAtual.setMilliseconds(0)
       ret = "Pills: " + dataPills.toLocaleString() + "Servidor: " + dataAtual.toLocaleString();
-      if(dataPills.toLocaleString('en-US') === dataAtual.toLocaleString('en-US') && (parseInt(jsonData[i].status) === 1)){
+      if(dataPills.toLocaleString({ timeZone: 'UTC' }) === dataAtual.toLocaleString({ timeZone: 'UTC' }) && (parseInt(jsonData[i].status) === 1)){
            ret = "Sim"
            break
       }     
