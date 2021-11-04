@@ -58,9 +58,8 @@ exports.returnEsp = (req, res) => {
       dataPills.setMilliseconds(0)
       dataAtual.setSeconds(0)
       dataAtual.setMilliseconds(0)
-      //&& (parseInt(jsonData[i].status) === 1)
       ret = "Pills: " + dataPills.toLocaleString() + "Servidor: " + dataAtual.toLocaleString();
-      if(dataPills.toLocaleString() === dataAtual.toLocaleString()){
+      if(dataPills.toLocaleString('en-US') === dataAtual.toLocaleString('en-US') && (parseInt(jsonData[i].status) === 1)){
            ret = "Sim"
            break
       }     
