@@ -51,7 +51,7 @@ exports.returnEsp = (req, res) => {
     const jsonData = JSON.parse(JSON.stringify(data))
     let ret = "Não"
     for (var i = 0; i < jsonData.length; i++) {
-      let dataFinal = jsonData[i].data.substr(0, 11) + jsonData[i].hora
+      let dataFinal = jsonData[i].data.substr(0, 11) + jsonData[i].hora+3
       let dataPills = new Date(dataFinal)
       let dataAtual = new Date()
       dataPills.setSeconds(0)
@@ -59,7 +59,7 @@ exports.returnEsp = (req, res) => {
       dataAtual.setSeconds(0)
       dataAtual.setMilliseconds(0)
       ret = "Pills: " + dataPills.toLocaleString() + "Servidor: " + dataAtual.toLocaleString();
-      if(dataPills.toLocaleString({ timeZone: 'UTC' }) === dataAtual.toLocaleString({ timeZone: 'UTC' }) && (parseInt(jsonData[i].status) === 1)){
+      if(dataPills.toLocaleString() === dataAtual.toLocaleString() && (parseInt(jsonData[i].status) === 1)){
            ret = "Sim"
            break
       }     
